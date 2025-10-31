@@ -9,10 +9,9 @@ O simulador permite observar e comparar o número de faltas de páginas em cada 
 ---
 
 ## Objetivos
-- Implementar quatro algoritmos de substituição de páginas (mínimo exigido);
+- Implementar quatro algoritmos de substituição de páginas;
 - Comparar o número de faltas de página geradas por cada algoritmo;
 - Exibir os resultados de forma clara e comparativa;
-- **(Extra)**: apresentar os resultados graficamente através de uma interface gráfica (Swing ou PrimeFaces).
 
 ---
 
@@ -95,12 +94,12 @@ O simulador permite avaliar a eficiência relativa dos algoritmos de substituiç
 
 ---
 
-## Autores
+## Autor
 - Alberto P Lopes
 
 ---
 
-## Rositorio
+## Rositório
 - https://github.com/Betalha/Simulador-de-algoritmos-de-substituicao-de-paginas
 
 
