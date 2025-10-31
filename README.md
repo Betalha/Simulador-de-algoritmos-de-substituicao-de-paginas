@@ -1,6 +1,6 @@
-# 🧠 Simulador de Algoritmos de Substituição de Páginas
+# Simulador de Algoritmos de Substituição de Páginas
 
-## 📘 Resumo
+## Resumo
 Este projeto tem como objetivo **simular e comparar o desempenho** de diferentes **algoritmos de substituição de páginas** utilizados em sistemas de gerenciamento de memória virtual.  
 Os algoritmos implementados são: **FIFO**, **LRU**, **Relógio (Clock)**, **Ótimo**, **NFU** e **Envelhecimento (Aging)**.  
 
@@ -8,7 +8,7 @@ O simulador permite observar e comparar o número de faltas de páginas em cada 
 
 ---
 
-## 🎯 Objetivos
+## Objetivos
 - Implementar quatro algoritmos de substituição de páginas (mínimo exigido);
 - Comparar o número de faltas de página geradas por cada algoritmo;
 - Exibir os resultados de forma clara e comparativa;
@@ -23,22 +23,18 @@ Cada algoritmo é executado com base nessa sequência, e o simulador calcula o t
 
 ### Estrutura do Código
 ```
-📁 src/
- ┣ 📂 algorithms/
- ┃ ┣ 📜 FIFO.java
- ┃ ┣ 📜 LRU.java
- ┃ ┣ 📜 Clock.java
- ┃ ┣ 📜 Optimal.java
- ┃ ┣ 📜 NFU.java
- ┃ ┗ 📜 Aging.java
- ┣ 📜 Simulator.java
- ┣ 📜 Main.java
- ┗ 📜 Utils.java
+src/
+ ┣ utils/
+ ┃ ┣ FIFO.java
+ ┃ ┣ LRU.java
+ ┃ ┣ Optimal.java
+ ┃ ┣ NFU.java
+ ┗ Main.java
 ```
 
 ---
 
-## 🧩 Algoritmos Implementados
+## Algoritmos Implementados
 
 ### 1. FIFO (First In, First Out)
 Substitui a página mais antiga carregada na memória.  
@@ -48,68 +44,50 @@ Substitui a página mais antiga carregada na memória.
 Remove a página usada há mais tempo.  
 📋 **Implementação:** estrutura que rastreia o uso recente.
 
-### 3. Relógio (Clock)
-Fornece uma segunda chance antes da substituição.  
-📋 **Implementação:** lista circular de páginas com bit de uso.
+### 3. NFU (Not Frequently Used)
+Baseado na frequência de uso das páginas.  
+📋 **Implementação:** Atribui um contador a cada página e incrementa o contador sempre que a página é referenciada. A página com o menor contador é substituída.
 
 ### 4. Ótimo (Optimal)
-Substitui a página que será usada mais tarde no futuro (referência teórica).  
+Substitui a página que será usada mais tarde no futuro.  
 📋 **Implementação:** previsão futura das referências de página.
-
-*(Extras opcionais: NFU e Envelhecimento).*
 
 ---
 
 ## 🧪 Exemplo de Saída
 
 ```
-Sequência de páginas: 1 2 3 4 1 2 5 1 2 3 4 5
-Número de quadros: 3
-
-Resultados:
-- FIFO: 9 faltas de página
-- LRU: 8 faltas de página
-- Clock: 8 faltas de página
-- Ótimo: 7 faltas de página
+Páginas lidas: [1, 2, 3, 4, 1, 2, 5, 1, 2, 3, 4, 5]
+Quartos informados: 3
+faltas FIFO: 9
+faltas LRU: 10
+faltas NFU: 10
+faltas Optimal: 7
 ```
-
-Se a versão com interface gráfica estiver habilitada, os resultados também serão apresentados em forma de **gráfico comparativo de barras**.
 
 ---
 
-## 🖥️ Interface Gráfica (opcional)
+## 🖥️ Interface Gráfica 
 A interface foi implementada utilizando **Swing**, permitindo:
-- Inserir a sequência de páginas;
+- Inserir a sequência de páginas (ex:1 2 3);
 - Selecionar o número de quadros;
-- Visualizar os resultados e gráficos.
-
-🔗 **Referência visual:** [Simulador online de substituição de páginas](https://sdpm-simulator.netlify.app)
+- Visualizar os resultados.
 
 ---
 
 ## 🚀 Como Executar
 
 ### ✅ Pré-requisitos
-- Java 11+ instalado  
-- IDE (IntelliJ, Eclipse, VS Code) ou terminal
+- Java 21.0.8  
 
 ### 🔧 Execução via terminal
 ```bash
-# Compilar
-javac -d bin src/**/*.java
-
-# Executar
-java -cp bin Main
-```
-
-### 🔧 Execução com interface gráfica (se disponível)
-```bash
-java -cp bin MainGUI
+java -cp out/production/PJ-SO-ATV Main
 ```
 
 ---
 
-## 📊 Resultados Esperados
+## Resultados Esperados
 O simulador permite avaliar a eficiência relativa dos algoritmos de substituição de páginas, identificando:
 - O número de faltas de páginas por método;
 - O comportamento de cada algoritmo sob diferentes padrões de acesso;
@@ -117,15 +95,12 @@ O simulador permite avaliar a eficiência relativa dos algoritmos de substituiç
 
 ---
 
-## 👨‍💻 Autores
-- **Seu Nome Aqui**
-- **Nome do colega (se houver)**
+## Autores
+- Alberto P Lopes
 
 ---
 
-## 📚 Referências
-- TANENBAUM, A. S. *Modern Operating Systems.* 4th ed. Pearson, 2014.  
-- SILBERSCHATZ, A.; GALVIN, P. B.; GAGNE, G. *Operating System Concepts.* Wiley, 2020.  
-- Site de referência: [https://sdpm-simulator.netlify.app](https://sdpm-simulator.netlify.app)  
-- DevMedia. *Introdução à interface GUI no Java.*  
-  Disponível em: [https://www.devmedia.com.br/introducao-a-interface-gui-no-java/25646](https://www.devmedia.com.br/introducao-a-interface-gui-no-java/25646)
+## Rositorio
+- https://github.com/Betalha/Simulador-de-algoritmos-de-substituicao-de-paginas
+
+
